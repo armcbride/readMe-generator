@@ -2,7 +2,7 @@ const api = require('./utils/api');
 const generateMarkdown = require('./utils/generateMarkdown');
 const fs = require('fs');
 const inquirer = require('inquirer');
-
+const path = require('path');
 
 inquirer
 const questions = [
