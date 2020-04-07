@@ -1,9 +1,10 @@
 const api = require('./utils/api');
 const generateMarkdown = require('./utils/generateMarkdown');
 const fs = require('fs');
-const inquirer = require('inquirer')
-inquirer
+const inquirer = require('inquirer');
 
+
+inquirer
 const questions = [
 {type: "input",
 message: "what is your name?",
@@ -15,7 +16,7 @@ name: "github"
 },
 {type: "input",
 message: "what is your Project Name?",
-name: "project"
+name: "title"
 },
 {type: "input",
 message: "Describe your project.",
