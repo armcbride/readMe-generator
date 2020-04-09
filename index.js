@@ -109,7 +109,7 @@ function getQuestions() {
   
     const usersInfo = `
   <h1 align= "center">${response.project}</h1> 
-  <div># Table of Contents </div>
+  <div>Table of Contents</div>
   <ul>
   <li><a href="#description">Description</a></li>  
   <li><a href="#installation">Installation</a></li> 
