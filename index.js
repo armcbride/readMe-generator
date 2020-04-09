@@ -1,8 +1,10 @@
+//calls
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
 require(`dotenv`).config();
 
+//function to ask questions
 function getQuestions() {
     inquirer
       .prompt([{
@@ -33,7 +35,7 @@ function getQuestions() {
         {
           type: "checkbox",
           message: "Technology used",
-          choices: ["Node.Js", " Express", " JavaScript", " jQuery", " React.js", " React", " MongoDB", " MySQL", " HTML", " CSS", " Bootstrap", " APIs", " Heroku", " Command- Line"],
+          choices: [" HTML", " CSS", " Bootstrap", " APIs", "JSON,", "Node.Js", " Express", " JavaScript", " jQuery", " React.js", " React", " MongoDB", " MySQL",  " Heroku", " Command- Line"],
           name: "technology"
         },
         {
@@ -79,10 +81,11 @@ function getQuestions() {
         gitAPI(userName, response);
       });
   }
+  //calling question function
   getQuestions();
   
+  //API call function
   function gitAPI(userName, response) {
-    console.log(userName);
     const queryUrl = `https://api.github.com/users/${userName}`;
   
     axios
@@ -102,9 +105,8 @@ function getQuestions() {
   
       });
   
-    //end function
   }
-  
+  // function that generates the MD file
   function generateMarkdown(response, res) {
   
     const usersInfo = `
@@ -163,7 +165,7 @@ function getQuestions() {
         return console.log(err);
       }
   
-      console.log("Success!");
+      console.log("generating...");
   
     });
   
