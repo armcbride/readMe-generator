@@ -1,5 +1,5 @@
 
-  <h1 align= "center">test</h1> 
+  <h1 align= "center">readMe-Generator</h1> 
   <div>Table of Contents</div>
   <ul>
   <li><a href="#description">Description</a></li>  
@@ -20,7 +20,7 @@
   <p>test</p>
   <hr>
   <div id="tech"><h3>Technology</h3></div>           
-  <p>Node.Js</p>
+  <p> HTML, APIs,JSON,,Node.Js</p>
   <hr>
   <div id="usage"><h3>Usage</h3></div>
   <p>test</p>  

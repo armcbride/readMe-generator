@@ -111,29 +111,29 @@ function getQuestions() {
   
     const usersInfo = `
   <h1 align= "center">${response.project}</h1> 
-  <div>Table of Contents</div>
+  <h3>Table of Contents<h3>
   <ul>
-  <li><a href="#description">Description</a></li>  
-  <li><a href="#installation">Installation</a></li> 
+  <li><a href="#descrip">Description</a></li>  
+  <li><a href="#install">Installation</a></li> 
   <li><a href="#tech">Technology</a></li> 
-  <li><a href="#usage">Usage</a></li> 
+  <li><a href="#use">Usage</a></li> 
   <li><a href="#license">License</a></li>
   <li><a href="#screen">Screenshots</a></li> 
-  <li><a href="#contributors">Contributors</a></li> 
+  <li><a href="#contr">Contributors</a></li> 
   <li><a href="#tests">Tests</a></li>
-  <li><a href="#questions">Questions</a></li>  
+  <li><a href="#quest">Questions</a></li>  
   </ul>
     <hr>
-  <div id="description"><h3>Description</h3> </div>
+  <div id="descrip"><h3>Description</h3> </div>
   ${response.description}
   <hr>
-  <div id="installation"><h3>Installation</h3> </div>
+  <div id="install"><h3>Installation</h3> </div>
   <p>${response.installation}</p>
   <hr>
   <div id="tech"><h3>Technology</h3></div>           
   <p>${response.technology}</p>
   <hr>
-  <div id="usage"><h3>Usage</h3></div>
+  <div id="use"><h3>Usage</h3></div>
   <p>${response.usage}</p>  
   <hr>
   <div id="license"><h3>License</h3></div>
@@ -142,13 +142,13 @@ function getQuestions() {
   <div id="screen"><h3>Screenshots</h3></div>
   <p></p>
   <hr>
-  <div id="contributors"><h3>Contributors</h3> </div>
+  <div id="contr"><h3>Contributors</h3> </div>
   <p>${response.contributors}</p> 
   <hr>
   <div id="tests"><h3>Tests</h3></div>
   <p>${response.tests}</p>
   <hr>
-  <div id="questions"><h3>Questions?</h3> </div>
+  <div id="quest"><h3>Questions?</h3> </div>
   <img align="right" width="100" height="100" src="${res.data.avatar_url}">         
     Contact: ${response.name}       
   <ul>
