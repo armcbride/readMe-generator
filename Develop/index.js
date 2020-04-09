@@ -1,12 +1,11 @@
-const api = require('./utils/api');
-const generateMarkdown = require('./utils/generateMarkdown');
+const axios = require('axios');
 const fs = require('fs');
 const inquirer = require('inquirer');
 const path = require('path');
 
+function getQuestions(){
 inquirer
-const questions = [
-{type: "input",
+.prompt([{type: "input",
 message: "what is your name?",
 name: "name"
 },
@@ -55,8 +54,88 @@ name: "portfolio"
 {type: "input",
 message: "Tests?",
 name: "tests"
-},
-];
+}])
+.then(function(response){
+    let userName = response.username
+
+    githubAPI(userName, response);
+});
+}
+getQuestions()
+
+//axios call for github
+
+
+function githubAPI(userName, response) {
+    const queryUrl = `https://api.github.com/users/${userName}`;
+  
+    axios
+      .get(queryUrl, {
+        headers: {
+          "Authorization": `token ${process.env.GH_TOKEN}`
+        }
+      })
+      .then(function (res) {  
+  
+        generateMD(response, res);
+      }).catch(function (err) {
+  
+        console.log(err);
+  
+      });
+    }
+
+  function renderLicense(license, github, title){
+  
+    if (license !== "none"){
+      return `[![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)](${generateProjectUrl(github, title)})`
+    } 
+    return "";
+  }
+  
+  
+  function renderSection (license){
+    if (license !== "none"){
+      return (`## License
+      This project is under the ${license} license.
+      `)
+    }
+  
+    return '';
+  }
+  
+  function generateMarkdown(data) {
+    return `
+  # ${data.title}
+
+   ${renderLicense(data.license, data.github, data.title)}
+  
+  ## Description
+  ${data.description}
+
+  # Table of Contents
+  
+  To install the following dependencies, run the following command 
+  ${data.installation}
+  
+  # Usage
+  ${data.usage}
+  ${renderSection(data.license)}
+  
+  # Contributors
+  ${data.contributing}
+  
+  # Test
+  to run rest, run the following commands
+  ${data.test}
+  
+  # Questions
+  If you have any questions or issues running please contact
+  ${data.github} ${data.email}
+  `;
+  }
+  
+  module.exports = generateMarkdown;
 
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(),fileName),data)
