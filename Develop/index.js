@@ -117,32 +117,43 @@ function getQuestions() {
   <li><a href="#usage">Usage</a></li> 
   <li><a href="#license">License</a></li>
   <li><a href="#screen">ScreenShots</a></li> 
-  <li><a href="#contributors">Contributors</a></li>   
-  <li><a href="#contact">Contact</a></li> 
-  <li><a href="#tests">Tests</a></li> 
+  <li><a href="#contributors">Contributors</a></li> 
+  <li><a href="#tests">Tests</a></li>
+  <li><a href="#questions">Questions</a></li>  
   </ul>
+
   <div id="description"><h3>Description</h3> </div>
   ${response.description}
-  <div id="installation"><h3>Installation </div>
-  <p>${response.installation}          
-  <div id="tech"><h3>Technology</div>           
-  <p>${response.technology}</p>          
-  <div id="usage"><h3>Usage </div>
-  <p>${response.usage}</p>   
-  <div id="license"><h3>License</div>
+
+  <div id="installation"><h3>Installation</h3> </div>
+  <p>${response.installation}</p>
+
+  <div id="tech"><h3>Technology</h3></div>           
+  <p>${response.technology}</p>
+
+  <div id="usage"><h3>Usage </h3></div>
+  <p>${response.usage}</p>  
+
+  <div id="license"><h3>License</h3></div>
   <p><img align="left" src= "https://img.shields.io/badge/License-${response.license}-blue"></p>
-  <div id="screen"><h3>Screenhots </div>
-  <div id="contributors"><h3>Contributors </div>
+
+  <div id="screen"><h3>Screenshots</h3></div>
+  <p></p>
+  <div id="contributors"><h3>Contributors</h3> </div>
   <p>${response.contributors}</p> 
-  <div id="contact"><h3>Contact </div>
+  
+  <div id="tests"><h3>Tests</h3></div>
+  <p>${response.tests}</p>
+  
+  <div id="questions"><h3>Questions?</h3> </div>
   <img align="right" width="100" height="100" src="${res.data.avatar_url}">         
-    Name: ${response.name}       
-  <a href= "https://github.com/${response.username}">GitHub</a>
-  <a href= "${response.portfolio}">Portfolio</a>
-  <a href= "mailto:${res.data.email}">${res.data.email}</a>      
-  <a href= "https://www.linkedin.com/in/${response.linkedin}">LinkedIn</a> 
-  <div id="tests">Tests</div>
-  <p>${response.tests}</p>`
+    Contact: ${response.name}       
+  <ul>
+  <li>Github: <a href= "https://github.com/${response.username}">https://github.com/${response.username}</a></li>
+  <li>Portfolio: <a href= "${response.portfolio}">${response.portfolio}</a></li>
+  <li>Email: <a href= "mailto:${res.data.email}">${res.data.email}</a> </li>     
+  <li>LinkedIn: <a href= "https://www.linkedin.com/in/${response.linkedin}">https://www.linkedin.com/in/${response.linkedin}</a></li>
+  </ul> `
   
     fs.writeFile("create-README.md", usersInfo, function (err) {
   
