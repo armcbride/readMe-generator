@@ -1,16 +1,25 @@
 {
-  "name": "static-site",
+  "name": "readme-generator",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "armcbride",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.19.0",
     "dotenv": "^8.0.0",
     "inquirer": "^6.3.1"
   },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "armcbride"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
   "description": ""
 }
