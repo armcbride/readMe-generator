@@ -35,7 +35,7 @@ function getQuestions() {
         {
           type: "checkbox",
           message: "Technology used",
-          choices: [" HTML", " CSS", " Bootstrap", " APIs", "JSON,", "Node.Js", " Express", " JavaScript", " jQuery", " React.js", " React", " MongoDB", " MySQL",  " Heroku", " Command- Line"],
+          choices: [" HTML", " CSS", " Bootstrap", " APIs", " JSON", " Node.Js", " Express", " JavaScript", " jQuery", " React.js", " React", " MongoDB", " MySQL",  " Heroku", " Command- Line", "Handlebars"],
           name: "technology"
         },
         {
@@ -111,7 +111,7 @@ function getQuestions() {
   
     const usersInfo = `
   <h1 align= "center">${response.project}</h1> 
-  <h3>Table of Contents<h3>
+  <h2>Table of Contents<h2>
   <ul>
   <li><a href="#descrip">Description</a></li>  
   <li><a href="#install">Installation</a></li> 
@@ -124,31 +124,31 @@ function getQuestions() {
   <li><a href="#quest">Questions</a></li>  
   </ul>
     <hr>
-  <div id="descrip"><h3>Description</h3> </div>
+  <div id="descrip"><h2>Description</h2> </div>
   ${response.description}
   <hr>
-  <div id="install"><h3>Installation</h3> </div>
+  <div id="install"><h2>Installation</h2> </div>
   <p>${response.installation}</p>
   <hr>
-  <div id="tech"><h3>Technology</h3></div>           
+  <div id="tech"><h2>Technology</h2></div>           
   <p>${response.technology}</p>
   <hr>
-  <div id="use"><h3>Usage</h3></div>
+  <div id="use"><h2>Usage</h2></div>
   <p>${response.usage}</p>  
   <hr>
-  <div id="license"><h3>License</h3></div>
+  <div id="license"><h2>License</h2></div>
   <p><img align="left" src= "https://img.shields.io/badge/License-${response.license}-blue"></p><br>
   <hr>
-  <div id="screen"><h3>Screenshots</h3></div>
-  <p></p>
+  <div id="screen"><h2>Screenshots</h2></div>
+  <p><img src= ""><img src= ""><img src= ""></p>
   <hr>
-  <div id="contr"><h3>Contributors</h3> </div>
+  <div id="contr"><h2>Contributors</h2> </div>
   <p>${response.contributors}</p> 
   <hr>
-  <div id="tests"><h3>Tests</h3></div>
+  <div id="tests"><h2>Tests</h2></div>
   <p>${response.tests}</p>
   <hr>
-  <div id="quest"><h3>Questions?</h3> </div>
+  <div id="quest"><h2>Questions?</h2> </div>
   <img align="right" width="100" height="100" src="${res.data.avatar_url}">         
     Contact: ${response.name}       
   <ul>
@@ -160,7 +160,7 @@ function getQuestions() {
   <hr>`
   
     fs.writeFile("create-README.md", usersInfo, function (err) {
-  
+   
       if (err) {
         return console.log(err);
       }
